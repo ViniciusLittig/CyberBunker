@@ -1,13 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
-
 import * as Animatable from 'react-native-animatable'
-
 import { useNavigation } from '@react-navigation/native'
+
 
 
 export default function SignIn () {
     const navigation = useNavigation()
+
+    const [email, setEmail] = useState(null)
+    const [senha, setSenha] = useState(null)
+    const [erroEmail, setErroEmail] = useState(null)
+    const [erroSenha, setErroSenha] = useState(null)
+
+    const validar = () => {
+        setErroEmail("Preencha seu email corretamente")
+        return false
+    }
+    const salvar = () => {
+        if (validar()) {
+        console.log('Salvouuu...')
+        }
+    }
+
+
+
     return (
         <View style={style.container}>
             <Animatable.View animation="fadeInLeft" delay={500} style={style.containerHeader}>
@@ -18,15 +35,22 @@ export default function SignIn () {
                 <Text style={style.title}>Email</Text>
                 <TextInput
                     placeholder="Digite seu email..."
+                    onChangeText={value => setEmail(value)}
                     style={style.input}
+                    erroMessage={erroEmail}
                 />
                 <Text style={style.title}>Senha</Text>
                 <TextInput
                     placeholder="Digite sua senha..."
+                    onChangeText={value => setSenha(value)}
                     style={style.input}
+                    erroMessage={erroSenha}
                 />
 
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity 
+                    style={style.button}
+                    onPress={() => salvar()}
+                >
                     <Text style={style.buttonText}>Acessar</Text>
                 </TouchableOpacity>
 
