@@ -4,6 +4,7 @@ import Welcome from '../pages/Welcome'
 import SignIn from '../pages/Signin'
 import Register from '../pages/Register'
 
+
 const Stack = createNativeStackNavigator();
 
 export default function Routes() {
@@ -26,6 +27,7 @@ export default function Routes() {
                 component={Register}
                 options={{ headerShown: false}}
             />
+            
         </Stack.Navigator>
     )
 }

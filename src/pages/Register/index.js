@@ -2,18 +2,26 @@ import React from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
+import { useNavigation } from '@react-navigation/native'
+import { KeyboardAvoidingView, TouchableWithoutFeedback } from 'react-native-web';
+
+export default function Welcome() {
+    const navigation = useNavigation();
 
 
-export default function Register () {
+
+
 
     return (
+      
+            
         <View style={style.container}>
             <Animatable.View animation="fadeInLeft" delay={500} style={style.containerHeader}>
                 <Text style={style.message}>Cadastre-se</Text>
             </Animatable.View>
 
             <Animatable.View animation="fadeInUp" style={style.containerForm}>
-                <Text style={style.title}>Nome</Text>
+                <Text style={style.title}>Nome Completo</Text>
                 <TextInput
                     placeholder="Digite seu nome..."
                     style={style.input}
@@ -24,6 +32,26 @@ export default function Register () {
                     style={style.input}
                     keyboardType="numeric"
                 />
+                <Text style={style.title}>Data de Nascimento</Text>
+                <TextInput
+                    placeholder="Digite sua data de nascimento..."
+                    style={style.input}
+                />
+                <Text style={style.title}>Endereço</Text>
+                <TextInput
+                    placeholder="Digite seu endereço..."
+                    style={style.input}
+                />
+                
+                <Text style={style.title}>Telefone</Text>
+                <TextInput
+                    placeholder="Digite seu telefone..."
+                    style={style.input}
+                />
+
+
+
+
                 <Text style={style.title}>Email</Text>
                 <TextInput
                     placeholder="Digite seu email..."
@@ -38,10 +66,25 @@ export default function Register () {
                 <TouchableOpacity style={style.button}>
                     <Text style={style.buttonText}>Cadastrar</Text>
                 </TouchableOpacity>
+                <TouchableOpacity
+                    style={style.button1}
+                    onPress={() => navigation.navigate('SignIn')}
+                >
+                    <Text style={style.buttonText}>Cancelar</Text>
+
+                </TouchableOpacity>
+
+
+
+
+
 
             </Animatable.View>
         </View>
+       
+       
     );
+
 };
 
 const style = StyleSheet.create({
@@ -97,5 +140,15 @@ const style = StyleSheet.create({
     },
     registerText: {
         color: '#a1a1a1'
-    }
+    },
+    button1: {
+        backgroundColor: 'red',
+        width: '100%',
+        borderRadius: 4,
+        paddingVertical: 8,
+        marginTop: 14,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
 })
