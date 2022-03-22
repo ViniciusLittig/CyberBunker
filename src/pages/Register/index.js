@@ -1,21 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
-import { KeyboardAvoidingView, TouchableWithoutFeedback } from 'react-native-web';
+
 
 export default function Welcome() {
     const navigation = useNavigation();
 
-
-
-
-
     return (
       
             
-        <View style={style.container}>
+        <ScrollView style={style.container}>
             <Animatable.View animation="fadeInLeft" delay={500} style={style.containerHeader}>
                 <Text style={style.message}>Cadastre-se</Text>
             </Animatable.View>
@@ -80,7 +76,7 @@ export default function Welcome() {
 
 
             </Animatable.View>
-        </View>
+        </ScrollView>
        
        
     );
