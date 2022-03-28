@@ -28,26 +28,6 @@ export default function Welcome() {
                     style={style.input}
                     keyboardType="numeric"
                 />
-                <Text style={style.title}>Data de Nascimento</Text>
-                <TextInput
-                    placeholder="Digite sua data de nascimento..."
-                    style={style.input}
-                />
-                <Text style={style.title}>Endereço</Text>
-                <TextInput
-                    placeholder="Digite seu endereço..."
-                    style={style.input}
-                />
-                
-                <Text style={style.title}>Telefone</Text>
-                <TextInput
-                    placeholder="Digite seu telefone..."
-                    style={style.input}
-                />
-
-
-
-
                 <Text style={style.title}>Email</Text>
                 <TextInput
                     placeholder="Digite seu email..."
