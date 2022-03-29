@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView , Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { ScrollView, View , Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
