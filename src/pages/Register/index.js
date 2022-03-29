@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, ScrollView , Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
@@ -15,7 +15,7 @@ export default function Welcome() {
     return (
       
             
-        <View style={style.container}>
+        <ScrollView style={style.container}>
             <Animatable.View animation="fadeInLeft" delay={500} style={style.containerHeader}>
                 <Text style={style.message}>Cadastre-se</Text>
             </Animatable.View>
@@ -60,7 +60,7 @@ export default function Welcome() {
 
 
             </Animatable.View>
-        </View>
+        </ScrollView>
        
        
     );
@@ -89,6 +89,7 @@ const style = StyleSheet.create({
         borderTopRightRadius: 25,
         paddingStart: '5%',
         paddingEnd: '5%',
+        paddingBottom: '5%'
     },
     title: {
         fontSize: 20,
