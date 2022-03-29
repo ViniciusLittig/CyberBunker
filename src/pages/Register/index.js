@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { ScrollView, View , Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
@@ -85,6 +85,7 @@ const style = StyleSheet.create({
         borderTopRightRadius: 25,
         paddingStart: '5%',
         paddingEnd: '5%',
+        paddingBottom: '5%'
     },
     title: {
         fontSize: 20,
