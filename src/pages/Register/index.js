@@ -3,14 +3,10 @@ import { ScrollView, View , Text, StyleSheet, TextInput, TouchableOpacity } from
 
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
-import { KeyboardAvoidingView, TouchableWithoutFeedback } from 'react-native-web';
+
 
 export default function Welcome() {
     const navigation = useNavigation();
-
-
-
-
 
     return (
       
