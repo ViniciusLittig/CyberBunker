@@ -49,7 +49,7 @@ export default function SignIn () {
 
                 <TouchableOpacity 
                     style={style.button}
-                    onPress={() => salvar()}
+                    onPress={() => navigation.navigate('Home')}
                 >
                     <Text style={style.buttonText}>Acessar</Text>
                 </TouchableOpacity>
@@ -69,7 +69,7 @@ export default function SignIn () {
 const style = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#38a69d'
+        backgroundColor: '#2824ba'
     },
     containerHeader: {
         marginTop: '14%',
@@ -100,7 +100,7 @@ const style = StyleSheet.create({
         fontSize: 16,
     },
     button: {
-        backgroundColor: '#38a69d',
+        backgroundColor: '#2824ba',
         width: '100%',
         borderRadius: 4,
         paddingVertical: 8,

@@ -1,8 +1,9 @@
 import React from 'react';
-import { ScrollView, View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { ScrollView, View , Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
+
 
 
 export default function Welcome() {
@@ -28,26 +29,6 @@ export default function Welcome() {
                     style={style.input}
                     keyboardType="numeric"
                 />
-                <Text style={style.title}>Data de Nascimento</Text>
-                <TextInput
-                    placeholder="Digite sua data de nascimento..."
-                    style={style.input}
-                />
-                <Text style={style.title}>Endereço</Text>
-                <TextInput
-                    placeholder="Digite seu endereço..."
-                    style={style.input}
-                />
-                
-                <Text style={style.title}>Telefone</Text>
-                <TextInput
-                    placeholder="Digite seu telefone..."
-                    style={style.input}
-                />
-
-
-
-
                 <Text style={style.title}>Email</Text>
                 <TextInput
                     placeholder="Digite seu email..."
@@ -86,7 +67,7 @@ export default function Welcome() {
 const style = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#38a69d'
+        backgroundColor: '#2824ba'
     },
     containerHeader: {
         marginTop: '14%',
@@ -105,6 +86,7 @@ const style = StyleSheet.create({
         borderTopRightRadius: 25,
         paddingStart: '5%',
         paddingEnd: '5%',
+        paddingBottom: '5%'
     },
     title: {
         fontSize: 20,
