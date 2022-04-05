@@ -5,6 +5,7 @@ import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
 
 
+
 export default function Welcome() {
     const navigation = useNavigation();
 
@@ -66,7 +67,7 @@ export default function Welcome() {
 const style = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#38a69d'
+        backgroundColor: '#2824ba'
     },
     containerHeader: {
         marginTop: '14%',
