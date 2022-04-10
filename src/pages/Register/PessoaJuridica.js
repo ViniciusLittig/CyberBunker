@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ScrollView, View , Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+
 
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
 
 
 
-export default function Welcome() {
+
+export default function PessoaJuridica() {
     const navigation = useNavigation();
 
     return (
@@ -18,18 +20,56 @@ export default function Welcome() {
             </Animatable.View>
 
             <Animatable.View animation="fadeInUp" style={style.containerForm}>
+                <Text style={style.title}>CNPJ</Text>
+                <TextInput
+                    placeholder="Digite seu CNPJ..."
+                    style={style.input}
+                    keyboardType="numeric"
+                />
 
-                <TouchableOpacity style={style.button}
-                onPress={() => navigation.navigate('RegisterFisica')}
-                >
-                    <Text style={style.buttonText}>Pessoa Fisica</Text>
+                <Text style={style.title}>NOME FANTASIA</Text>
+                <TextInput
+                    placeholder="Digite o nome fantasia..."
+                    style={style.input}
+                />
+                <Text style={style.title}>RAZÃO SOCIAL</Text>
+                <TextInput
+                    placeholder="Digite sua razão social..."
+                    style={style.input}
+                />
+                <Text style={style.title}>INSCRIÇÃO ESTADUAL</Text>
+                <TextInput
+                    placeholder="Digite sua EI..."
+                    style={style.input}
+                />
+                <Text style={style.title}>Email</Text>
+                <TextInput
+                    placeholder="Digite seu email..."
+                    style={style.input}
+                />
+                <Text style={style.title}>Senha</Text>
+                <TextInput
+                    placeholder="Digite sua senha..."
+                    style={style.input}
+                />
+                <Text style={style.title}>Confirme a Senha</Text>
+                <TextInput
+                    placeholder="Confirme a sua senha..."
+                    style={style.input}
+                />
+
+                <TouchableOpacity 
+                    style={style.button}
+                    onPress={() => navigation.navigate('Register')}
+                    >
+                    <Text style={style.buttonText}>Cadastrar</Text>
                 </TouchableOpacity>
-                
+
                 <TouchableOpacity
                     style={style.button1}
-                    onPress={() => navigation.navigate('RegisterJuridica')}
+                    onPress={() => navigation.navigate('Register')}
                 >
-                    <Text style={style.buttonText}>Pessoa Juridica</Text>
+                    <Text style={style.buttonText}>Cancelar</Text>
 
                 </TouchableOpacity>
 
