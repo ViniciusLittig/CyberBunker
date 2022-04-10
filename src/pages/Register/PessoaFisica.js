@@ -1,12 +1,12 @@
 import React from 'react';
-import { ScrollView, View , Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { TextInputMask,ScrollView, View , Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
 
 
 
-export default function Welcome() {
+export default function PessoaFisica() {
     const navigation = useNavigation();
 
     return (
@@ -18,18 +18,45 @@ export default function Welcome() {
             </Animatable.View>
 
             <Animatable.View animation="fadeInUp" style={style.containerForm}>
+                <Text style={style.title}>CPF</Text>
+                <TextInput
+                    placeholder="Digite seu CPF/CNPJ..."
+                    style={style.input}
+                    keyboardType="numeric"
+                />
+                <Text style={style.title}>Nome Completo</Text>
+                <TextInput
+                    placeholder="Digite seu nome..."
+                    style={style.input}
+                />
+                <Text style={style.title}>Email</Text>
+                <TextInput
+                    placeholder="Digite seu email..."
+                    style={style.input}
+                />
+                <Text style={style.title}>Senha</Text>
+                <TextInput
+                    placeholder="Digite sua senha..."
+                    style={style.input}
+                />
+                <Text style={style.title}>Confirme a Senha</Text>
+                <TextInput
+                    placeholder="Confirme a senha..."
+                    style={style.input}
+                />
 
-                <TouchableOpacity style={style.button}
-                onPress={() => navigation.navigate('RegisterFisica')}
-                >
-                    <Text style={style.buttonText}>Pessoa Fisica</Text>
+                <TouchableOpacity 
+                    style={style.button}
+                    onPress={() => navigation.navigate('Register')}
+                    >
+                    <Text style={style.buttonText}>Cadastrar</Text>
                 </TouchableOpacity>
-                
+
                 <TouchableOpacity
                     style={style.button1}
-                    onPress={() => navigation.navigate('RegisterJuridica')}
+                    onPress={() => navigation.navigate('Register')}
                 >
-                    <Text style={style.buttonText}>Pessoa Juridica</Text>
+                    <Text style={style.buttonText}>Cancelar</Text>
 
                 </TouchableOpacity>
 
