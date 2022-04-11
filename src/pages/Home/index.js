@@ -4,7 +4,9 @@ import {
     Text,
     StyleSheet,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    ScrollView,
+    TextInput
 } from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
@@ -17,43 +19,116 @@ export default function Welcome() {
     return (
 
 
-        <View style={styles.container}>
- <Animatable.View animation="fadeInLeft" delay={600} style={styles.containerHeader}>
-                <Text style={styles.message}>Área de Agendamentos</Text>
+        <ScrollView style={style.container}>
+            <Animatable.View animation="fadeInLeft" delay={600} style={style.containerHeader}>
+                <Text style={style.message}>Área de Agendamentos</Text>
             </Animatable.View>
-           
 
-            <View style={styles.containerLogo} >
+
+            <View style={style.containerLogo} >
                 <Animatable.Image
                     animation="flipInY"
                     source={require('../../assets/logo2.png')}
-                    style={{ width: '100%' }}
+                    style={style.containerLogo}
                     resizeMode="contain"
                 />
             </View>
-            
 
-            <Animatable.View delay={600} animation="fadeInUp" style={styles.containerForm}>
-                <Text style={styles.title}>Escolha o consultorio!</Text>
-                <Text style={styles.text}></Text>
 
+            <Animatable.View delay={600} animation="fadeInUp" style={style.containerForm}>
+
+                <Text style={style.title}>Escolha o consultório que deseja! </Text>
+              
+                
+
+           
+
+            </Animatable.View>
+
+            <Animatable.View delay={600} animation="fadeInUp" style={style.containerForm}>
+                <View style={style.photo}>
+                    <Animatable.Image 
+                      animation="flipInY"
+                      source={style.photo}
+                    resizeMode="contain"
+                       
+                    />
+               
+
+                </View>
+
+                <Text style={style.title}>Consultório Médico Doutor Estáquio de Castro Melo</Text>
                 <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => navigation.navigate('SignIn')}
+                    style={style.button}
+                    onPress={() => navigation.navigate('Register')}
                 >
-                    <Text style={styles.buttonText} >Anga</Text>
+                    <Text style={style.buttonText}>Escolher</Text>
                 </TouchableOpacity>
 
-             
             </Animatable.View>
+            <Animatable.View delay={600} animation="fadeInUp" style={style.containerForm}>
+
+                <Text style={style.title}>Consultório Santa Clara</Text>
+                <TouchableOpacity
+                    style={style.button}
+                    onPress={() => navigation.navigate('Register')}
+                >
+                    <Text style={style.buttonText}>Escolher</Text>
+                </TouchableOpacity>
+
+            </Animatable.View>
+            <Animatable.View delay={600} animation="fadeInUp" style={style.containerForm}>
+
+                <Text style={style.title}>Dr. Claudemir Borghi - Otorrino Clínica</Text>
+                <TouchableOpacity
+                    style={style.button}
+                    onPress={() => navigation.navigate('Register')}
+                >
+                    <Text style={style.buttonText}>Escolher</Text>
+                </TouchableOpacity>
+
+            </Animatable.View>
+
+
+            <Animatable.View delay={600} animation="fadeInUp" style={style.containerForm}>
+
+
+
             
 
+                <TouchableOpacity
+                    style={style.button1}
+                    onPress={() => navigation.navigate('Schedule')}
+                >
+                    <Text style={style.buttonText}>Meus Agendamentos</Text>
 
-        </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={style.button1}
+                    onPress={() => navigation.navigate('Profile')}
+                >
+                    <Text style={style.buttonText}>Perfil</Text>
+
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={style.button1}
+                    onPress={() => navigation.navigate('SignIn')}
+                >
+                    <Text style={style.buttonText}>Sair</Text>
+
+                </TouchableOpacity>
+
+
+            </Animatable.View>
+
+
+
+        </ScrollView>
     );
 }
 
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#2824ba'
@@ -65,23 +140,32 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     message: {
-        fontSize: 28,
+        fontSize: 30,
         fontWeight: 'bold',
         color: '#FFF',
     },
     containerLogo: {
-        flex: 1.5,
+        width: '100%',
+        height: 200,
         backgroundColor: '#2824ba',
-        justifyContent: 'center',
-        alignItems: 'center',
+        marginTop: 9,
+        marginBottom: 20,
+
+
+
     },
+    //parte branca
     containerForm: {
-        flex: 2,
+        flex: 5,
         backgroundColor: '#FFF',
-        borderTopLeftRadius: 2,
+        borderTopLeftRadius: 10,
         borderTopRightRadius: 2,
         paddingStart: '5%',
-        paddingEnd: '5%'
+        paddingEnd: '5%',
+        paddingBottom: '5%',
+        borderRadius: 10,
+        marginTop: 14,
+        alignItems: 'center',
     },
     title: {
         fontSize: 24,
@@ -92,44 +176,50 @@ const styles = StyleSheet.create({
     text: {
         color: '#a1a1a1'
     },
+    input: {
+        borderBottomWidth: 1,
+        height: 40,
+        marginBottom: 12,
+        fontSize: 16,
+    },
     button: {
-        position: 'absolute',
-        backgroundColor: '#2824ba',
-        borderRadius: 50,
-        paddingVertical: 20,
-        width: '100%',
-        alignSelf: 'center',
-        bottom: '60%',
+        backgroundColor: '#38a69d',
+        width: '120%',
+        borderRadius: 10,
+        paddingVertical: 8,
+        marginTop: 14,
+        justifyContent: 'center',
         alignItems: 'center',
-        justifyContent: 'center'
     },
     buttonText: {
-        fontSize: 30,
         color: '#FFF',
-        fontWeight: 'bold'
+        fontSize: 18,
+        fontWeight: 'bold',
     },
+    buttonRegister: {
+        marginTop: 14,
+        alignSelf: 'center',
+    },
+    registerText: {
+        color: '#a1a1a1'
+    },
+    button1: {
+        backgroundColor: '#b9113f',
+        width: '100%',
+        borderRadius: 10,
+        paddingVertical: 8,
+        marginTop: 14,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    photo:{
+        width:  100,
+        height: 100,
+        backgroundColor: '#2824ba',
+        marginTop: 9,
+        marginBottom: 20,
 
-    button2: {
-        position: 'absolute',
-        backgroundColor: '#2824ba',
-        borderRadius: 50,
-        paddingVertical: 20,
-        width: '100%',
-        alignSelf: 'center',
-        bottom: '60%',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    button3: {
-        position: 'absolute',
-        backgroundColor: '#2824ba',
-        borderRadius: 50,
-        paddingVertical: 30,
-        width: '100%',
-        alignSelf: 'center',
-        bottom: '60%',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
+     
+    }
 
 })

@@ -18,6 +18,7 @@ export default function PessoaJuridica() {
             <Animatable.View animation="fadeInLeft" delay={500} style={style.containerHeader}>
                 <Text style={style.message}>Cadastre-se</Text>
             </Animatable.View>
+          
 
             <Animatable.View animation="fadeInUp" style={style.containerForm}>
                 <Text style={style.title}>CNPJ</Text>
@@ -150,5 +151,8 @@ const style = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    
+        
+        
 
 })

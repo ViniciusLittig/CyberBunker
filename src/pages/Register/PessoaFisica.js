@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInputMask,ScrollView, View , Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { TextInputMask,ScrollView, View , Text, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
@@ -16,6 +16,9 @@ export default function PessoaFisica() {
             <Animatable.View animation="fadeInLeft" delay={500} style={style.containerHeader}>
                 <Text style={style.message}>Cadastre-se</Text>
             </Animatable.View>
+
+            
+            
 
             <Animatable.View animation="fadeInUp" style={style.containerForm}>
                 <Text style={style.title}>CPF</Text>
