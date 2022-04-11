@@ -11,7 +11,9 @@ import PessoaFisica from '../pages/Register/PessoaFisica';
 import PessoaJuridica from '../pages/Register/PessoaJuridica';
 import Profile from '../pages/Profile/index';
 import Schedule from '../pages/Schedule';
-import Clinics from '../pages/Clinics/Consultório Santa Clara';
+import Consu_Santa_Clara from '../pages/Clinics/Consu_Santa_Clara';
+import Consu_Dr_Claudemir from '../pages/Clinics/Consu_Dr_Claudemir';
+import Consu_Dr_Estaquio from '../pages/Clinics/Consu_Dr_Estaquio';
 
 
 
@@ -65,15 +67,25 @@ export default function Routes() {
                 options={{ headerShown: false }}
             />
 
-<Stack.Screen
+            <Stack.Screen
                 name='Schedule'
                 component={Schedule}
                 options={{ headerShown: false }}
             />
 
-<Stack.Screen
-                name='Clinics'
-                component={Clinics}
+            <Stack.Screen
+                name='Consu_Santa_Clara'
+                component={Consu_Santa_Clara}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name='Consu_Dr_Claudemir'
+                component={Consu_Dr_Claudemir}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name='Consu_Dr_Estaquio'
+                component={Consu_Dr_Estaquio}
                 options={{ headerShown: false }}
             />
         </Stack.Navigator>

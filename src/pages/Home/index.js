@@ -49,7 +49,8 @@ export default function Welcome() {
                 <View style={style.photo}>
                     <Animatable.Image 
                       animation="flipInY"
-                      source={style.photo}
+                      source={require('../../assets/doctor1.jpg')}
+                      style={style.photo}
                     resizeMode="contain"
                        
                     />
@@ -60,29 +61,51 @@ export default function Welcome() {
                 <Text style={style.title}>Consultório Médico Doutor Estáquio de Castro Melo</Text>
                 <TouchableOpacity
                     style={style.button}
-                    onPress={() => navigation.navigate('Register')}
+                    onPress={() => navigation.navigate('Consu_Dr_Estaquio')}
                 >
                     <Text style={style.buttonText}>Escolher</Text>
                 </TouchableOpacity>
 
             </Animatable.View>
             <Animatable.View delay={600} animation="fadeInUp" style={style.containerForm}>
+            <View style={style.photo}>
+                    <Animatable.Image 
+                      animation="flipInY"
+                      source={require('../../assets/doctor2.jpg')}
+                      style={style.photo}
+                    resizeMode="contain"
+                       
+                    />
+
+                </View>
 
                 <Text style={style.title}>Consultório Santa Clara</Text>
                 <TouchableOpacity
                     style={style.button}
-                    onPress={() => navigation.navigate('Register')}
+                    onPress={() => navigation.navigate('Consu_Santa_Clara')}
                 >
                     <Text style={style.buttonText}>Escolher</Text>
                 </TouchableOpacity>
 
+
             </Animatable.View>
             <Animatable.View delay={600} animation="fadeInUp" style={style.containerForm}>
+            <View style={style.photo}>
+                    <Animatable.Image 
+                      animation="flipInY"
+                      source={require('../../assets/doctor3.jpg')}
+                      style={style.photo}
+                    resizeMode="contain"
+                       
+                    />
+               
+
+                </View>
 
                 <Text style={style.title}>Dr. Claudemir Borghi - Otorrino Clínica</Text>
                 <TouchableOpacity
                     style={style.button}
-                    onPress={() => navigation.navigate('Register')}
+                    onPress={() => navigation.navigate('Consu_Dr_Claudemir')}
                 >
                     <Text style={style.buttonText}>Escolher</Text>
                 </TouchableOpacity>
@@ -215,8 +238,8 @@ const style = StyleSheet.create({
     photo:{
         width:  100,
         height: 100,
-        backgroundColor: '#2824ba',
-        marginTop: 9,
+        backgroundColor: '#FFF',
+        marginTop: 5,
         marginBottom: 20,
 
      

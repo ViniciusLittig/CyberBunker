@@ -19,7 +19,7 @@ export default function Welcome () {
           
 
             <Animatable.View delay={600} animation="fadeInUp" style={styles.containerForm}>
-                <Text style={styles.title}>Perfil!</Text>
+                <Text style={styles.title}>Consultório Médico Doutor Estáquio de Castro Melo!</Text>
                 <Text style={styles.text}></Text>
 
                 <TouchableOpacity 
