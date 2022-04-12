@@ -6,6 +6,7 @@ import {
     Image,
     TouchableOpacity
  } from 'react-native';
+ import DatePicker from 'react-native-datepicker';
 
  import * as Animatable from 'react-native-animatable'
 
@@ -14,19 +15,35 @@ import {
 export default function Welcome () {
     const navigation = useNavigation();
 
+    state = {
+        data: ''
+    }
+    changeDate = (valor) => {
+        this.setState({
+            data: valor
+        })
+    }
+
     return (
-        <View style={styles.container}>
+        <View style={style.container}>
+
+            <DatePicker
+                formt="DD/MM/YYYY"
+                style={ style.dateComponente}
+                date={this.state.data}
+                onDateChange={this.changeDate}
+            />
           
 
-            <Animatable.View delay={600} animation="fadeInUp" style={styles.containerForm}>
-                <Text style={styles.title}>Dr. Claudemir Borghi - Otorrino Clínica!</Text>
-                <Text style={styles.text}></Text>
+            <Animatable.View delay={600} animation="fadeInUp" style={style.containerForm}>
+                <Text style={style.title}>Consultório Médico Doutor Estáquio de Castro Melo!</Text>
+                <Text style={style.text}></Text>
 
                 <TouchableOpacity 
-                style={styles.button}
+                style={style.button}
                 onPress= { () => navigation.navigate('SignIn')}
                 >
-                    <Text style={styles.buttonText} >Acessar</Text>
+                    <Text style={style.buttonText} >Acessar</Text>
                 </TouchableOpacity>
 
             </Animatable.View>
@@ -34,7 +51,7 @@ export default function Welcome () {
     );
 }
 
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#2824ba'

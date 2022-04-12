@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { 
     View, 
     Text,
     StyleSheet,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
  } from 'react-native';
+ import DatePicker from 'react-native-datepicker';
+ 
 
  import * as Animatable from 'react-native-animatable'
 
@@ -14,8 +16,24 @@ import {
 export default function Welcome () {
     const navigation = useNavigation();
 
+    state = {
+        data: ''
+    }
+    changeDate = (valor) => {
+        this.setState({
+            data: valor
+        })
+    }
+
     return (
         <View style={styles.container}>
+
+            <DatePicker
+                formt="DD/MM/YYYY"
+                style={ styles.dateComponente}
+                date={this.state.data}
+                onDateChange={this.changeDate}
+            />
           
 
             <Animatable.View delay={600} animation="fadeInUp" style={styles.containerForm}>
