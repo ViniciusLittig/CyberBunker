@@ -1,57 +1,98 @@
-import React from 'react';
-import { 
-    View, 
+import React, { useState } from 'react';
+import {
+    View,
     Text,
     StyleSheet,
     Image,
-    TouchableOpacity
- } from 'react-native';
+    TouchableOpacity,
+    Button,
+    Platform
+} from 'react-native';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
- import * as Animatable from 'react-native-animatable'
+import * as Animatable from 'react-native-animatable'
 
- import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 
-export default function Welcome () {
+export default function Welcome() {
     const navigation = useNavigation();
+
+    const [date, setDate] = useState(new Date(1598051730000));
+    const [mode, setMode] = useState('date');
+    const [show, setShow] = useState(false);
+    const onChange = (event, selectedDate) => {
+        setDate(selectedDate);
+    };
+    const showDatepicker = () => {
+        setShow('true');
+
+    };
+    const showMode = (currentMode) => {
+        setShow(true);
+        setMode(currentMode);
+      };
+    const showTimepicker = () => {
+        showMode('time');
+      };
+
 
     return (
         <View style={styles.container}>
-          
+
+
+
+
 
             <Animatable.View delay={600} animation="fadeInUp" style={styles.containerForm}>
                 <Text style={styles.title}>Consultório Médico Doutor Estáquio de Castro Melo!</Text>
                 <Text style={styles.text}></Text>
 
-                <TouchableOpacity 
-                style={styles.button}
-                onPress= { () => navigation.navigate('SignIn')}
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => navigation.navigate('SignIn')}
                 >
                     <Text style={styles.buttonText} >Acessar</Text>
                 </TouchableOpacity>
 
+
+                <View>
+                <Button onPress={showDatepicker} title="Escolha o Dia!" />
+            </View>
+            <View>
+        <Button onPress={showTimepicker} title="Escolha da Data!" />
+      </View>
+
+            <Text>selected: {date.toLocaleString()}</Text>
+            {show && (
+                <DateTimePicker
+                    testID="dateTimePicker"
+                    value={date}
+                    mode={'date'}
+                    is24Hour={true}
+                    onChange={onChange}
+                />
+            )}
+
             </Animatable.View>
-         </View>
+
+            
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 2,
         backgroundColor: '#2824ba'
     },
-    containerLogo: {
-        flex: 2,
-        backgroundColor: '#2824ba',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
+ 
     containerForm: {
         flex: 1,
         backgroundColor: '#FFF',
-        borderTopLeftRadius: 25,
+        borderTopLeftRadius: 10,
         borderTopRightRadius: 25,
-        paddingStart: '5%',
-        paddingEnd: '5%'
+        paddingStart: '10%',
+        paddingEnd: '10%'
     },
     title: {
         fontSize: 24,

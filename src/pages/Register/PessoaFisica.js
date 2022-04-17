@@ -23,7 +23,7 @@ export default function PessoaFisica() {
             <Animatable.View animation="fadeInUp" style={style.containerForm}>
                 <Text style={style.title}>CPF</Text>
                 <TextInput
-                    placeholder="Digite seu CPF/CNPJ..."
+                    placeholder="Digite seu CPF..."
                     style={style.input}
                     keyboardType="numeric"
                 />
@@ -98,7 +98,10 @@ const style = StyleSheet.create({
         borderTopRightRadius: 25,
         paddingStart: '5%',
         paddingEnd: '5%',
-        paddingBottom: '5%'
+        paddingBottom: '5%',
+        borderRadius: 25,
+     
+ 
     },
     title: {
         fontSize: 20,
