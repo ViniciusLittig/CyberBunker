@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInputMask,ScrollView, View , Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { TextInputMask,ScrollView, View , Text, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
@@ -17,10 +17,13 @@ export default function PessoaFisica() {
                 <Text style={style.message}>Cadastre-se</Text>
             </Animatable.View>
 
+            
+            
+
             <Animatable.View animation="fadeInUp" style={style.containerForm}>
                 <Text style={style.title}>CPF</Text>
                 <TextInput
-                    placeholder="Digite seu CPF/CNPJ..."
+                    placeholder="Digite seu CPF..."
                     style={style.input}
                     keyboardType="numeric"
                 />
@@ -95,7 +98,10 @@ const style = StyleSheet.create({
         borderTopRightRadius: 25,
         paddingStart: '5%',
         paddingEnd: '5%',
-        paddingBottom: '5%'
+        paddingBottom: '5%',
+        borderRadius: 25,
+     
+ 
     },
     title: {
         fontSize: 20,

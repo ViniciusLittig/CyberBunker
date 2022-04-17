@@ -15,8 +15,8 @@ export default function Welcome () {
     const navigation = useNavigation();
 
     return (
-        <View style={styles.container}>
-            <View style={styles.containerLogo} >
+        <View style={style.container}>
+            <View style={style.containerLogo} >
                 <Animatable.Image
                     animation="flipInY"
                     source={require('../../assets/logo.png')}
@@ -25,15 +25,15 @@ export default function Welcome () {
                 />
             </View>
 
-            <Animatable.View delay={600} animation="fadeInUp" style={styles.containerForm}>
-                <Text style={styles.title}>Monitore, marque suas consultas de qualquer lugar!</Text>
-                <Text style={styles.text}>Faça login para começar</Text>
+            <Animatable.View delay={600} animation="fadeInUp" style={style.containerForm}>
+                <Text style={style.title}>Monitore, marque suas consultas de qualquer lugar!</Text>
+                <Text style={style.text}>Faça login para começar</Text>
 
                 <TouchableOpacity 
-                style={styles.button}
+                style={style.button}
                 onPress= { () => navigation.navigate('SignIn')}
                 >
-                    <Text style={styles.buttonText} >Acessar</Text>
+                    <Text style={style.buttonText} >Acessar</Text>
                 </TouchableOpacity>
 
             </Animatable.View>
@@ -41,7 +41,7 @@ export default function Welcome () {
     );
 }
 
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#2824ba'

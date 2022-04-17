@@ -18,6 +18,7 @@ export default function PessoaJuridica() {
             <Animatable.View animation="fadeInLeft" delay={500} style={style.containerHeader}>
                 <Text style={style.message}>Cadastre-se</Text>
             </Animatable.View>
+          
 
             <Animatable.View animation="fadeInUp" style={style.containerForm}>
                 <Text style={style.title}>CNPJ</Text>
@@ -108,7 +109,9 @@ const style = StyleSheet.create({
         borderTopRightRadius: 25,
         paddingStart: '5%',
         paddingEnd: '5%',
-        paddingBottom: '5%'
+        paddingBottom: '5%',
+        borderRadius: 25,
+
     },
     title: {
         fontSize: 20,
@@ -150,5 +153,8 @@ const style = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    
+        
+        
 
 })
