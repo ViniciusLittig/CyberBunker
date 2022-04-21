@@ -17,19 +17,49 @@ export default function Welcome() {
                 <Text style={style.message}>Cadastre-se</Text>
             </Animatable.View>
 
-            <Animatable.View animation="fadeInUp" style={style.containerForm}>
+            
+            
 
-                <TouchableOpacity style={style.button}
-                onPress={() => navigation.navigate('RegisterFisica')}
-                >
-                    <Text style={style.buttonText}>Pessoa Fisica</Text>
+            <Animatable.View animation="fadeInUp" style={style.containerForm}>
+                <Text style={style.title}>CPF/CNPJ</Text>
+                <TextInput
+                    placeholder="Digite seu CPF/CNPJ..."
+                    style={style.input}
+                    keyboardType="numeric"
+                />
+                <Text style={style.title}>Nome Completo</Text>
+                <TextInput
+                    placeholder="Digite seu nome..."
+                    style={style.input}
+                />
+                <Text style={style.title}>Email</Text>
+                <TextInput
+                    placeholder="Digite seu email..."
+                    style={style.input}
+                />
+                <Text style={style.title}>Senha</Text>
+                <TextInput
+                    placeholder="Digite sua senha..."
+                    style={style.input}
+                />
+                <Text style={style.title}>Confirme a Senha</Text>
+                <TextInput
+                    placeholder="Confirme a senha..."
+                    style={style.input}
+                />
+
+                <TouchableOpacity 
+                    style={style.button}
+                    onPress={() => navigation.navigate('Home')}
+                    >
+                    <Text style={style.buttonText}>Cadastrar</Text>
                 </TouchableOpacity>
-                
+
                 <TouchableOpacity
                     style={style.button1}
-                    onPress={() => navigation.navigate('RegisterJuridica')}
+                    onPress={() => navigation.navigate('SignIn')}
                 >
-                    <Text style={style.buttonText}>Pessoa Juridica</Text>
+                    <Text style={style.buttonText}>Cancelar</Text>
 
                 </TouchableOpacity>
 
@@ -70,7 +100,8 @@ const style = StyleSheet.create({
         paddingEnd: '5%',
         paddingBottom: '5%',
         borderRadius: 25,
-        alignItems: 'center',
+     
+ 
     },
     title: {
         fontSize: 20,
