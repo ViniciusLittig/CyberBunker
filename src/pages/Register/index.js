@@ -1,15 +1,19 @@
-import React from 'react';
-import { ScrollView, View , Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import React, {useState} from 'react';
+import { ScrollView, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
 
+import { TextInputMask } from 'react-native-masked-text'
 
 
 export default function Welcome() {
     const navigation = useNavigation();
 
-    return (
+    const [cell, setcell] = useState('')
+    const [cpf, setcpf] = useState('')
+    
+    return ( 
       
             
         <ScrollView style={style.container}>
@@ -17,20 +21,32 @@ export default function Welcome() {
                 <Text style={style.message}>Cadastre-se</Text>
             </Animatable.View>
 
-            
-            
-
             <Animatable.View animation="fadeInUp" style={style.containerForm}>
-                <Text style={style.title}>CPF/CNPJ</Text>
-                <TextInput
+                <Text style={style.title}>CPF</Text>
+                <TextInputMask
                     placeholder="Digite seu CPF/CNPJ..."
                     style={style.input}
-                    keyboardType="numeric"
+                    type={'cpf'}
+                    value={cpf}
+                    onChangeText= { text => setcpf(text)}
                 />
                 <Text style={style.title}>Nome Completo</Text>
                 <TextInput
                     placeholder="Digite seu nome..."
                     style={style.input}
+                />
+                <Text style={style.title}>Telefone</Text>
+                <TextInputMask
+                    style={style.input}
+                    placeholder="Digite seu Telefone..."
+                    type={'cel-phone'}
+                    options={{
+                        maskType: 'BRL',
+                        withDDD: true,
+                        dddMask: '(99) '
+                    }}
+                    value={cell}
+                    onChangeText={ text => setcell(text)}
                 />
                 <Text style={style.title}>Email</Text>
                 <TextInput
