@@ -1,0 +1,37 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml:1:1-3:12
+INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml:1:1-3:12
+INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml:1:1-3:12
+INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml:1:1-3:12
+INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml:1:1-3:12
+INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml:1:1-3:12
+INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml:1:1-3:12
+	package
+		ADDED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml:2:11-40
+		INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml
+		INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml
+		ADDED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml:1:1-3:12
+		INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml
+		ADDED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml:1:1-3:12
+		INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml:1:11-69
+uses-sdk
+INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml
+INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml
+INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml
+INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml
+		ADDED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml
+		INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml
+		ADDED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml
+		INJECTED from C:\React-Direto\AppCliente\node_modules\react-native-text-input-mask\android\src\main\AndroidManifest.xml
