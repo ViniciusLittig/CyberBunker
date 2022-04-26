@@ -20,6 +20,7 @@ import Consu_Dr_Estaquio from '../pages/Clinics/Consu_Dr_Estaquio';
 
 
 
+
 const Stack = createNativeStackNavigator();
 
 export default function Routes() {
