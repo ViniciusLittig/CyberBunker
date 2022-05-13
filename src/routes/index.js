@@ -7,8 +7,6 @@ import Welcome from '../pages/Welcome'
 import SignIn from '../pages/Signin'
 import Register from '../pages/Register'
 import Home from '../pages/Home'
-import PessoaFisica from '../pages/Register/PessoaFisica';
-import PessoaJuridica from '../pages/Register/PessoaJuridica';
 import Profile from '../pages/Profile/index';
 import Schedule from '../pages/Schedule';
 import Consu_Santa_Clara from '../pages/Clinics/Consu_Santa_Clara';
@@ -41,18 +39,6 @@ export default function Routes() {
             <Stack.Screen
                 name='Register'
                 component={Register}
-                options={{ headerShown: false }}
-            />
-
-            <Stack.Screen
-                name='RegisterFisica'
-                component={PessoaFisica}
-                options={{ headerShown: false }}
-            />
-
-            <Stack.Screen
-                name='RegisterJuridica'
-                component={PessoaJuridica}
                 options={{ headerShown: false }}
             />
 
