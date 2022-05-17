@@ -8,22 +8,36 @@ import { useNavigation } from '@react-navigation/native'
 export default function SignIn () {
     const navigation = useNavigation()
 
-    const [email, setEmail] = useState(null)
-    const [senha, setSenha] = useState(null)
-    const [erroEmail, setErroEmail] = useState(null)
-    const [erroSenha, setErroSenha] = useState(null)
+    const [user,setUser]=useState(null);
+    const [password,setPassword]=useState(null);
+    const [message,setMessage]=useState(null);
 
-    const validar = () => {
-        setErroEmail("Preencha seu email corretamente")
-        return false
+
+    //Fazer Login
+    async function doLogin()
+    {
+        let reqs = await fetch(config.urlRootPhp+'Controller.php',{
+            method: 'POST',
+            headers:{
+                'Accept':'application/json',
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify({
+                nameUser: user,
+                passwordUser: password
+            })
+        });
+        let ress = await reqs.json();
+        Keyboard.dismiss();
+       if(ress){
+           navigation.navigate('Home');
+       }else{
+            setMessage('Usuário ou senha inválidos');
+            setTimeout(()=>{
+                setMessage(null);
+            },3000);
+       }
     }
-    const salvar = () => {
-        if (validar()) {
-        console.log('Salvouuu...')
-        }
-    }
-
-
 
     return (
         <View style={style.container}>
@@ -32,24 +46,26 @@ export default function SignIn () {
             </Animatable.View>
 
             <Animatable.View animation="fadeInUp" style={style.containerForm}>
+                    {message &&(
+                        <Text style={css.login__message}>{message}</Text>
+                    )}
                 <Text style={style.title}>Email</Text>
                 <TextInput
                     placeholder="Digite seu email..."
-                    onChangeText={value => setEmail(value)}
                     style={style.input}
-                    erroMessage={erroEmail}
+                    onChangeText={(text)=>setUser(text)}
                 />
                 <Text style={style.title}>Senha</Text>
                 <TextInput
                     placeholder="Digite sua senha..."
-                    onChangeText={value => setSenha(value)}
                     style={style.input}
-                    erroMessage={erroSenha}
+                    secureTextEntry={true}
+                    onChangeText={(text)=>setPassword(text)}
                 />
 
                 <TouchableOpacity 
                     style={style.button}
-                    onPress={() => navigation.navigate('Home')}
+                    onPress={(doLogin) => navigation.navigate('Home')}
                 >
                     <Text style={style.buttonText}>Acessar</Text>
                 </TouchableOpacity>
