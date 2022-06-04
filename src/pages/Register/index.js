@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { ScrollView, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
@@ -9,17 +9,39 @@ import { TextInputMask } from 'react-native-masked-text'
 
 export default function Welcome() {
     const navigation = useNavigation();
+    const [cpf, setCpf] = useState(null)
+    const [user, setUser] = useState(null);
+    const [cell, setCell] = useState(null)
+    const [email, setEmail] = useState(null)
+    const [password, setPassword] = useState(null);
 
-    const [cell, setcell] = useState('')
-    const [cpf, setcpf] = useState('')
-    
-    return ( 
-      
-            
+    //envia od dados do formulario para o backend
+    async function registerUser() {
+        let reqs = await fetch("http://192.168.0.117:3000"+ 'create', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                cpfUser: cpf,
+                nameUser: user,
+                cellUser: cell,
+                emailUser: email,
+                passwordUser: password
+
+            })
+        });
+    }
+
+    return (
+
+
         <ScrollView style={style.container}>
             <Animatable.View animation="fadeInLeft" delay={500} style={style.containerHeader}>
                 <Text style={style.message}>Cadastre-se</Text>
             </Animatable.View>
+          
 
             <Animatable.View animation="fadeInUp" style={style.containerForm}>
                 <Text style={style.title}>CPF</Text>
@@ -28,11 +50,13 @@ export default function Welcome() {
                     style={style.input}
                     type={'cpf'}
                     value={cpf}
-                    onChangeText= { text => setcpf(text)}
+                    onChangeText={text => setcpf(text)}
                 />
                 <Text style={style.title}>Nome Completo</Text>
                 <TextInput
                     placeholder="Digite seu nome..."
+                    type={'calendarEvent'}
+                    onChangeText={(text) => setUser(text)}
                     style={style.input}
                 />
                 <Text style={style.title}>Telefone</Text>
@@ -46,28 +70,27 @@ export default function Welcome() {
                         dddMask: '(99) '
                     }}
                     value={cell}
-                    onChangeText={ text => setcell(text)}
+                    onChangeText={text => setcell(text)}
                 />
                 <Text style={style.title}>Email</Text>
                 <TextInput
                     placeholder="Digite seu email..."
+                    onChangeText={text => setEmail(text)}
+                    keyboardType="email-address"
                     style={style.input}
                 />
                 <Text style={style.title}>Senha</Text>
                 <TextInput
                     placeholder="Digite sua senha..."
+                    secureTextEntry={true}
                     style={style.input}
-                />
-                <Text style={style.title}>Confirme a Senha</Text>
-                <TextInput
-                    placeholder="Confirme a senha..."
-                    style={style.input}
+                    onChangeText={(text) => setPassword(text)}
                 />
 
-                <TouchableOpacity 
+                <TouchableOpacity
                     style={style.button}
-                    onPress={() => navigation.navigate('Home')}
-                    >
+                    onPress={registerUser}
+                >
                     <Text style={style.buttonText}>Cadastrar</Text>
                 </TouchableOpacity>
 
@@ -86,8 +109,8 @@ export default function Welcome() {
 
             </Animatable.View>
         </ScrollView>
-       
-       
+
+
     );
 
 };
@@ -116,8 +139,8 @@ const style = StyleSheet.create({
         paddingEnd: '5%',
         paddingBottom: '5%',
         borderRadius: 25,
-     
- 
+
+
     },
     title: {
         fontSize: 20,
