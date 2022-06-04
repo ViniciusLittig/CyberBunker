@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollView, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { ScrollView, Text, StyleSheet, TextInput, TouchableOpacity, View, TouchableNativeFeedback     } from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
@@ -9,15 +9,16 @@ import { TextInputMask } from 'react-native-masked-text'
 
 export default function Welcome() {
     const navigation = useNavigation();
-    const [cpf, setCpf] = useState(null)
+    const [cpf, setCpf] = useState(null);
     const [user, setUser] = useState(null);
-    const [cell, setCell] = useState(null)
-    const [email, setEmail] = useState(null)
+    const [tel, setTel] = useState(null);
+    const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
+    const [message, setMessage] = useState(null);
 
     //envia od dados do formulario para o backend
     async function registerUser() {
-        let reqs = await fetch("http://192.168.0.117:3000"+ 'create', {
+        let reqs = await fetch("http://192.168.0.117:3000"+ '/create', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -26,12 +27,14 @@ export default function Welcome() {
             body: JSON.stringify({
                 cpfUser: cpf,
                 nameUser: user,
-                cellUser: cell,
+                telUser: tel,
                 emailUser: email,
                 passwordUser: password
 
             })
         });
+        let ress=await reqs.json();
+        setMessage(ress);
     }
 
     return (
@@ -42,15 +45,22 @@ export default function Welcome() {
                 <Text style={style.message}>Cadastre-se</Text>
             </Animatable.View>
           
+      
 
             <Animatable.View animation="fadeInUp" style={style.containerForm}>
+            <View style={style.title}>{
+              message && (
+                  <Text>{message}</Text>
+
+              )
+          }</View>
                 <Text style={style.title}>CPF</Text>
                 <TextInputMask
                     placeholder="Digite seu CPF/CNPJ..."
                     style={style.input}
                     type={'cpf'}
                     value={cpf}
-                    onChangeText={text => setcpf(text)}
+                    onChangeText={text => setCpf(text)}
                 />
                 <Text style={style.title}>Nome Completo</Text>
                 <TextInput
@@ -69,8 +79,8 @@ export default function Welcome() {
                         withDDD: true,
                         dddMask: '(99) '
                     }}
-                    value={cell}
-                    onChangeText={text => setcell(text)}
+                    value={tel}
+                    onChangeText={text => setTel(text)}
                 />
                 <Text style={style.title}>Email</Text>
                 <TextInput
@@ -151,6 +161,7 @@ const style = StyleSheet.create({
         height: 40,
         marginBottom: 12,
         fontSize: 16,
+    
     },
     button: {
         backgroundColor: '#38a69d',

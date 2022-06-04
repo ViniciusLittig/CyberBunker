@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Keyboard } from 'react-native';
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
+import { TextInputMask } from 'react-native-masked-text'
 
 
 
@@ -9,6 +10,7 @@ export default function SignIn () {
     const navigation = useNavigation()
 
     const [user,setUser]=useState(null);
+    const [cpf, setCpf] = useState(null)
     const [password,setPassword]=useState(null);
     const [message,setMessage]=useState(null);
 
@@ -16,27 +18,27 @@ export default function SignIn () {
     //Fazer Login
     async function doLogin()
     {
-        let reqs = await fetch(config.urlRootPhp+'Controller.php',{
+        let reqs = await fetch("http://192.168.0.117:80/"+'Controller.php',{
             method: 'POST',
             headers:{
                 'Accept':'application/json',
                 'Content-Type':'application/json'
             },
             body: JSON.stringify({
-                nameUser: user,
+                cpfUser: cpf,
                 passwordUser: password
             })
         });
         let ress = await reqs.json();
         Keyboard.dismiss();
-       if(ress){
-           navigation.navigate('Home');
-       }else{
-            setMessage('Usuário ou senha inválidos');
+        if(ress){
+            navigation.navigate('Home');
+        }else{
+            setMessage('Usuário ou senha inválidos')
             setTimeout(()=>{
                 setMessage(null);
             },3000);
-       }
+        }
     }
 
     return (
@@ -47,14 +49,17 @@ export default function SignIn () {
 
             <Animatable.View animation="fadeInUp" style={style.containerForm}>
                     {message &&(
-                        <Text style={css.login__message}>{message}</Text>
+                        <Text style={style.messageNeg}>{message}</Text>
                     )}
-                <Text style={style.title}>Email</Text>
-                <TextInput
-                    placeholder="Digite seu email..."
+                <Text style={style.title}>CPF</Text>
+                <TextInputMask
+                    placeholder="Digite seu CPF/CNPJ..."
                     style={style.input}
-                    onChangeText={(text)=>setUser(text)}
+                    type={'cpf'}
+                    value={cpf}
+                    onChangeText={(text)=>setCpf(text)}
                 />
+
                 <Text style={style.title}>Senha</Text>
                 <TextInput
                     placeholder="Digite sua senha..."
@@ -65,7 +70,7 @@ export default function SignIn () {
 
                 <TouchableOpacity 
                     style={style.button}
-                    onPress={(doLogin) => navigation.navigate('Home')}
+                    onPress={doLogin}
                 >
                     <Text style={style.buttonText}>Acessar</Text>
                 </TouchableOpacity>
@@ -135,5 +140,9 @@ const style = StyleSheet.create({
     },
     registerText: {
         color: '#a1a1a1'
+    },
+    messageNeg: {
+        color: 'red',
+        marginTop: '2%',
     }
 })
