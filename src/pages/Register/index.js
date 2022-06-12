@@ -35,6 +35,9 @@ export default function Welcome() {
         });
         let ress=await reqs.json();
         setMessage(ress);
+        if(ress){
+            navigation.navigate('Home');
+        }
     }
 
     return (
