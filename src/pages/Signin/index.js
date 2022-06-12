@@ -42,7 +42,7 @@ export default function SignIn () {
     }
 
     return (
-        <View style={style.container}>
+        <View style={style.container} onPress={()=>Keyboard.dismiss()}>
             <Animatable.View animation="fadeInLeft" delay={500} style={style.containerHeader}>
                 <Text style={style.message}>Bem-vindo(a)</Text>
             </Animatable.View>
