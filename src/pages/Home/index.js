@@ -58,7 +58,7 @@ export default function Welcome() {
 
                 </View>
 
-                <Text style={style.title}>Consultório Médico Doutor Estáquio de Castro Melo</Text>
+                <Text style={style.title}>Heuro</Text>
                 <TouchableOpacity
                     style={style.button}
                     onPress={() => navigation.navigate('Consu_Dr_Estaquio')}
@@ -79,7 +79,7 @@ export default function Welcome() {
 
                 </View>
 
-                <Text style={style.title}>Consultório Santa Clara</Text>
+                <Text style={style.title}>Hospital Samar</Text>
                 <TouchableOpacity
                     style={style.button}
                     onPress={() => navigation.navigate('Consu_Santa_Clara')}
@@ -102,7 +102,7 @@ export default function Welcome() {
 
                 </View>
 
-                <Text style={style.title}>Dr. Claudemir Borghi - Otorrino Clínica</Text>
+                <Text style={style.title}>Hospital e Maternidade São Paulo</Text>
                 <TouchableOpacity
                     style={style.button}
                     onPress={() => navigation.navigate('Consu_Dr_Claudemir')}
@@ -169,13 +169,9 @@ const style = StyleSheet.create({
     },
     containerLogo: {
         width: '100%',
-        height: 200,
+        height: 300,
         backgroundColor: '#2824ba',
-        marginTop: 9,
         marginBottom: 20,
-
-
-
     },
     //parte branca
     containerForm: {
@@ -236,10 +232,9 @@ const style = StyleSheet.create({
         alignItems: 'center',
     },
     photo:{
-        width:  100,
-        height: 100,
+        width:  500,
+        height: 600,
         backgroundColor: '#FFF',
-        marginTop: 5,
         marginBottom: 20,
 
      
