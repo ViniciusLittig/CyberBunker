@@ -44,14 +44,21 @@ export default function Welcome() {
 
 
             <Animatable.View delay={600} animation="fadeInUp" style={styles.containerForm}>
-                <Text style={styles.title}>Consultório Médico Doutor Estáquio de Castro Melo!</Text>
+                <Text style={styles.title}>Hospital e Maternidade São Paulo</Text>
                 <Text style={styles.text}></Text>
+
+                <Animatable.Image
+                        animation="flipInY"
+                        source={require('../../../assets/saopaulo.jpg')}
+                        style={styles.containerLogo}
+                        resizeMode="contain"
+                    />
 
                 <TouchableOpacity
                     style={styles.button}
                     onPress={() => navigation.navigate('SignIn')}
                 >
-                    <Text style={styles.buttonText} >Acessar</Text>
+                    <Text style={styles.buttonText} >Agendar</Text>
                 </TouchableOpacity>
 
 
@@ -93,6 +100,12 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 25,
         paddingStart: '10%',
         paddingEnd: '10%'
+    },
+    containerLogo: {
+        width: '100%',
+        height: 300,
+        backgroundColor: '#2824ba',
+        marginBottom: 20,
     },
     title: {
         fontSize: 24,
