@@ -61,7 +61,7 @@ export default function Welcome() {
                 <Text style={style.title}>Heuro</Text>
                 <TouchableOpacity
                     style={style.button}
-                    onPress={() => navigation.navigate('Consu_Dr_Estaquio')}
+                    onPress={() => navigation.navigate('Heuro')}
                 >
                     <Text style={style.buttonText}>Escolher</Text>
                 </TouchableOpacity>
@@ -82,7 +82,7 @@ export default function Welcome() {
                 <Text style={style.title}>Hospital Samar</Text>
                 <TouchableOpacity
                     style={style.button}
-                    onPress={() => navigation.navigate('Consu_Santa_Clara')}
+                    onPress={() => navigation.navigate('Samar')}
                 >
                     <Text style={style.buttonText}>Escolher</Text>
                 </TouchableOpacity>
@@ -105,7 +105,7 @@ export default function Welcome() {
                 <Text style={style.title}>Hospital e Maternidade São Paulo</Text>
                 <TouchableOpacity
                     style={style.button}
-                    onPress={() => navigation.navigate('Consu_Dr_Claudemir')}
+                    onPress={() => navigation.navigate('Saopaulo')}
                 >
                     <Text style={style.buttonText}>Escolher</Text>
                 </TouchableOpacity>

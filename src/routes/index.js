@@ -9,9 +9,10 @@ import Register from '../pages/Register'
 import Home from '../pages/Home'
 import Profile from '../pages/Profile/index';
 import Schedule from '../pages/Schedule';
-import Consu_Santa_Clara from '../pages/Clinics/Consu_Santa_Clara';
-import Consu_Dr_Claudemir from '../pages/Clinics/Consu_Dr_Claudemir';
-import Consu_Dr_Estaquio from '../pages/Clinics/Consu_Dr_Estaquio';
+import Heuro from '../pages/Clinics/Heuro';
+import Samar from '../pages/Clinics/Samar';
+import Saopaulo from '../pages/Clinics/Saopaulo';
+
 
 
 
@@ -61,18 +62,18 @@ export default function Routes() {
             />
 
             <Stack.Screen
-                name='Consu_Santa_Clara'
-                component={Consu_Santa_Clara}
+                name='Heuro'
+                component={Heuro}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
-                name='Consu_Dr_Claudemir'
-                component={Consu_Dr_Claudemir}
+                name='Samar'
+                component={Samar}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
-                name='Consu_Dr_Estaquio'
-                component={Consu_Dr_Estaquio}
+                name='Saopaulo'
+                component={Saopaulo}
                 options={{ headerShown: false }}
             />
         </Stack.Navigator>
